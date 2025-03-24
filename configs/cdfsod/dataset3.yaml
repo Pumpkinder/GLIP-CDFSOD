@@ -1,0 +1,198 @@
+DATALOADER:
+  ASPECT_RATIO_GROUPING: false
+  SIZE_DIVISIBILITY: 32
+DATASETS:
+  # CAPTION_PROMPT: '[{"prefix": " ", "name": "dent", "suffix": ""},
+  #   {"prefix": "","name": "scratch", "suffix": ""},
+  #   {"prefix": "", "name": "crack", "suffix":""}, 
+  #   {"prefix": "", "name": "glass shatter", "suffix": ""}, 
+  #   {"prefix": "", "name": "lamp broken", "suffix": ""}, 
+  #   {"prefix": "","name": "tire flat", "suffix": ""}]'
+  # CAPTION_PROMPT: '[{"prefix": "", "name": "dent", "suffix": ""},
+  #   {"prefix": "","name": "scratch", "suffix": ""},
+  #   {"prefix": "", "name": "crack", "suffix":""}, 
+  #   {"prefix": "", "name": "glass shatter", "suffix": ""}, 
+  #   {"prefix": "", "name": "lamp broken", "suffix": ""}, 
+  #   {"prefix": "","name": "tire flat", "suffix": ""}]'
+  
+  GENERAL_COPY: 16
+  OVERRIDE_CATEGORY: '[
+        {
+            "id": 1,
+            "name": "dent"
+        },
+        {
+            "id": 2,
+            "name": "scratch"
+        },
+        {
+            "id": 3,
+            "name": "crack"
+        },
+        {
+            "id": 4,
+            "name": "glass shatter"
+        },
+        {
+            "id": 5,
+            "name": "lamp broken"
+        },
+        {
+            "id": 6,
+            "name": "tire flat"
+        }
+    ]'
+  # OVERRIDE_CATEGORY: '[
+  #       {
+  #           "id": 1,
+  #           "name": "dent"
+  #       },
+  #       {
+  #           "id": 2,
+  #           "name": "scratch, surface scratch"
+  #       },
+  #       {
+  #           "id": 3,
+  #           "name": "crack, material fracture"
+  #       },
+  #       {
+  #           "id": 4,
+  #           "name": "glass shatter, broken glass"
+  #       },
+  #       {
+  #           "id": 5,
+  #           "name": "lamp broken, damaged light"
+  #       },
+  #       {
+  #           "id": 6,
+  #           "name": "tire flat, deflated tire"
+  #       }
+  #   ]'
+  PREDEFINED_TEXT: odinw/pothole/category_description.json
+  REGISTER:
+    test:
+      ann_file: dataset3/annotations/test.json
+      img_dir: dataset3/test
+    train:
+      ann_file: dataset3/annotations/train.json
+      img_dir: dataset3/train
+    train_1_3:
+      ann_file: dataset3/annotations/1_shot.json
+      img_dir: dataset3/train
+    train_5_3:
+      ann_file: dataset3/annotations/5_shot.json
+      img_dir: dataset3/train
+    train_10_3:
+      ann_file: dataset3/annotations/10_shot.json
+      img_dir: dataset3/train
+    #################################################
+    # train:
+    #   ann_file: dataset3/dataset3_diff/train.json
+    #   img_dir:  dataset3/dataset3_diff/1_shot/0.2/
+    # train_1_3:
+    #   ann_file: dataset3/dataset3_diff/annotations/1_shot_pseu.json
+    #   img_dir: dataset3/dataset3_diff/1_shot/0.2/
+    # train_5_3:
+    #   ann_file: dataset3/annotations/5_shot.json
+    #   img_dir: dataset3/train
+    # train_10_3:
+    #   ann_file: dataset3/annotations/10_shot_pseu.json
+    #   img_dir: dataset3/train
+    ##################################################
+    # train_10_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot10_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_10_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot10_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_10_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot10_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_1_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot1_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_1_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot1_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_1_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot1_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_3_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot3_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_3_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot3_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_3_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot3_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_5_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot5_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_5_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot5_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # train_5_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train/fewshot_train_shot5_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/train
+    # val:
+    #   ann_file: dataset3/data3_test/annotations/instances_test2017.json
+    #   img_dir:  dataset3/data3_test/test2017
+    # val_10_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot10_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_10_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot10_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_10_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot10_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_1_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot1_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_1_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot1_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_1_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot1_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_3_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot3_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_3_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot3_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_3_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot3_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_5_3:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot5_seed3.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_5_30:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot5_seed30.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+    # val_5_300:
+    #   ann_file: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid/fewshot_val_shot5_seed300.json
+    #   img_dir: odinw/Aquarium/Aquarium Combined.v2-raw-1024.coco/valid
+  TEST: ("test",)
+  TRAIN: ("train",)
+INPUT:
+  MAX_SIZE_TEST: 1333
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: 800
+MODEL:
+  ATSS:
+    NUM_CLASSES: 7
+  DYHEAD:
+    NUM_CLASSES: 7
+  FCOS:
+    NUM_CLASSES: 7
+  ROI_BOX_HEAD:
+    NUM_CLASSES: 7
+SOLVER:
+  CHECKPOINT_PERIOD: 100
+  MAX_EPOCH: 12
+  WARMUP_ITERS: 0
+TEST:
+  IMS_PER_BATCH: 8
